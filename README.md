@@ -1,6 +1,16 @@
-# Authorisation (via OAuth API)
+# Table of contents
 
-Backly uses an OAuth based authentication with long lived **Access Tokens** to allow third-party apps access to the API on behalf of Backly users.
+1. [Authorization](#authorization)
+2. [API Endpoints](#endpoints)
+  1. [Links]()
+    1. [Create Link]()
+  2. [Adverts]()
+    1. [Get Recent Adverts]()
+
+<div id="authorization"></div>
+# Authorization (via OAuth API)
+
+Backly uses an OAuth based authorization with long lived **Access Tokens** to allow third-party apps access to the API on behalf of Backly users.
 
 ## Getting Started
 
@@ -49,5 +59,6 @@ Set your `Content-Type` header according to the format of the data you are sendi
 
 This request will return a JSON response containing an `access_token` token attribute. This **Access Token** can then be used to make API requests on behalf of the Backly user who authorized your app to do so.
 
-# Endpoints
+<div id="endpoints"></div>
+# API Endpoints
 
