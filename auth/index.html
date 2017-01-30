@@ -157,15 +157,16 @@
 <li><code>client_secret</code>: Your App Secret.</li>
 <li><code>code</code>: The Authorization Code returned by the successful authorization request.</li>
 <li><code>grant_type</code>: Set to <code>authorization_code</code>.</li>
-<li><code>redirect_uri</code>: Your Redirect URL.</li>
 </ul>
 <p>For example:</p>
 <pre><code>POST /oauth/token HTTP/1.1
 Host: app.back.ly.localhost
 Content-Type: application/x-www-form-urlencoded
 ...
-
-code=...
+client_id=&lt;client-id&gt;
+client_secret=&lt;client-secret&gt;
+code=&lt;auth-code&gt;
+grant_type=authorization_code
 </code></pre>
 
 <p>This request will return a JSON response containing an <code>access_token</code> token attribute. This <strong>Access Token</strong> can then be used to make API requests.</p>
