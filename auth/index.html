@@ -61,8 +61,6 @@
             
                 <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
                 
-                    <li><a class="toctree-l4" href="#encryption">Encryption</a></li>
-                
             
                 <li class="toctree-l3"><a href="#authorization">Authorization</a></li>
                 
@@ -124,10 +122,6 @@
               
                 <h1 id="introduction">Introduction</h1>
 <p>The Backly API uses OAuth authorization to allow third-party apps access to the API on behalf of Backly users once authorized to do so.</p>
-<h2 id="encryption">Encryption</h2>
-<p>It's strongly recommended that you use the API over a secure connection to protect the secrecy of your connection and your authorization tokens.</p>
-<div id="authorization"></div>
-
 <h1 id="authorization">Authorization</h1>
 <p>To authenticate an app's requets the API uses long lived Access Tokens granted by your app's users to access the API on their behalf. To obtain an access token you must be authorized by the user.</p>
 <h2 id="getting-started">Getting Started</h2>
@@ -175,16 +169,12 @@ code=...
 </code></pre>
 
 <p>This request will return a JSON response containing an <code>access_token</code> token attribute. This <strong>Access Token</strong> can then be used to make API requests.</p>
-<div id="post-requets"></div>
-
 <h3 id="post-requests">POST Requests</h3>
 <p>When making a <code>POST</code> request two formats are supported in the request body. Set your <code>Content-Type</code> header according to the format of the data you are sending.</p>
 <ul>
 <li><strong>URL-encoded</strong> (<code>application/x-www-form-urlencoded</code>)</li>
 <li><strong>JSON</strong> (<code>application/json</code>)</li>
 </ul>
-<div id="api"></div>
-
 <h1 id="authentication">Authentication</h1>
 <h2 id="using-the-access-token">Using the Access Token</h2>
 <p>To access the rest of the API in these docs you must use your Access Token as a Bearer Token in the <code>Authorization</code> header of every request you make.</p>
