@@ -161,12 +161,14 @@
 <p>For example:</p>
 <pre><code>POST /oauth/token HTTP/1.1
 Host: app.back.ly.localhost
-Content-Type: application/x-www-form-urlencoded
+Content-Type: application/json
 ...
-client_id=&lt;client-id&gt;
-client_secret=&lt;client-secret&gt;
-code=&lt;auth-code&gt;
-grant_type=authorization_code
+{
+  &quot;client_id&quot;: &quot;&lt;client-id&gt;&quot;,
+  &quot;client_secret&quot;: &quot;&lt;client-secret&gt;&quot;,
+  &quot;code&quot;: &quot;&lt;auth-code&gt;&quot;,
+  &quot;grant_type&quot;: &quot;authorization_code&quot;
+}
 </code></pre>
 
 <p>This request will return a JSON response containing an <code>access_token</code> token attribute. This <strong>Access Token</strong> can then be used to make API requests.</p>
