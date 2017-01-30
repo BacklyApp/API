@@ -2,12 +2,6 @@
 
 The Backly API uses OAuth authorization to allow third-party apps access to the API on behalf of Backly users once authorized to do so.
 
-## Encryption
-
-It's strongly recommended that you use the API over a secure connection to protect the secrecy of your connection and your authorization tokens.
-
-<div id="authorization"></div>
-
 # Authorization
 
 To authenticate an app's requets the API uses long lived Access Tokens granted by your app's users to access the API on their behalf. To obtain an access token you must be authorized by the user.
@@ -65,16 +59,12 @@ code=...
 
 This request will return a JSON response containing an `access_token` token attribute. This **Access Token** can then be used to make API requests.
 
-<div id="post-requets"></div>
-
 ### POST Requests
 
 When making a `POST` request two formats are supported in the request body. Set your `Content-Type` header according to the format of the data you are sending.
 
 - **URL-encoded** (`application/x-www-form-urlencoded`)
 - **JSON** (`application/json`)
-
-<div id="api"></div>
 
 # Authentication
 

@@ -6,6 +6,10 @@ Backly provides a stateless HTTP JSON API (`api.back.ly`) for the use of third-p
 
 The API uses OAuth to authenticate and allow users to authorize your app to access the API for them.
 
+## Encryption
+
+It's strongly recommended that you use the API over a secure connection to protect the secrecy of your connection and your authorization tokens.
+
 ## Example request
 
 An example request for creating a Backly link:
