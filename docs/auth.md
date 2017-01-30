@@ -44,7 +44,6 @@ When a user is redirected back to your Redirect URL after a successful authoriza
 - `client_secret`: Your App Secret.
 - `code`: The Authorization Code returned by the successful authorization request.
 - `grant_type`: Set to `authorization_code`.
-- `redirect_uri`: Your Redirect URL.
 
 For example:
 
@@ -53,8 +52,10 @@ POST /oauth/token HTTP/1.1
 Host: app.back.ly.localhost
 Content-Type: application/x-www-form-urlencoded
 ...
-
-code=...
+client_id=<client-id>
+client_secret=<client-secret>
+code=<auth-code>
+grant_type=authorization_code
 ```
 
 This request will return a JSON response containing an `access_token` token attribute. This **Access Token** can then be used to make API requests.
