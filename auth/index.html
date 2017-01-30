@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Authentication - Backly API</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Authentication";
+    var mkdocs_page_input_path = "auth.md";
+    var mkdocs_page_url = "/auth/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Backly API</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">About the API</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Authentication</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
+                
+                    <li><a class="toctree-l4" href="#encryption">Encryption</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#authorization">Authorization</a></li>
+                
+                    <li><a class="toctree-l4" href="#getting-started">Getting Started</a></li>
+                
+                    <li><a class="toctree-l4" href="#requesting-authorization">Requesting Authorization</a></li>
+                
+                    <li><a class="toctree-l4" href="#obtaining-an-access-token">Obtaining an Access Token</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#authentication">Authentication</a></li>
+                
+                    <li><a class="toctree-l4" href="#using-the-access-token">Using the Access Token</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../api/">The API</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Backly API</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Authentication</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="introduction">Introduction</h1>
+<p>The Backly API uses OAuth authorization to allow third-party apps access to the API on behalf of Backly users once authorized to do so.</p>
+<h2 id="encryption">Encryption</h2>
+<p>It's strongly recommended that you use the API over a secure connection to protect the secrecy of your connection and your authorization tokens.</p>
+<div id="authorization"></div>
+
+<h1 id="authorization">Authorization</h1>
+<p>To authenticate an app's requets the API uses long lived Access Tokens granted by your app's users to access the API on their behalf. To obtain an access token you must be authorized by the user.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>You will need a few things before you will be able to make authorization requests to the API.</p>
+<ul>
+<li>
+<p><strong>App ID</strong> and <strong>App Secret</strong>. These were automatically generated for you when your app was created.</p>
+</li>
+<li>
+<p><strong>Redirect URL</strong>. This is a location that the OAuth API will redirect a user back to once they have performed a successful authorization request. This must match the redirect URL that your app was created with and it must be updated if your app's redirect URL is changed.</p>
+</li>
+</ul>
+<h2 id="requesting-authorization">Requesting Authorization</h2>
+<p>First your app should direct a users browser to <code>http://app.back.ly/oauth/authorize</code> with the following query string parameters.</p>
+<ul>
+<li><code>client_id</code>: Your App ID.</li>
+<li><code>redirect_uri</code>: Your Redirect URL.</li>
+<li><code>response_type</code>: Set to <code>code</code>.</li>
+</ul>
+<p>For example:</p>
+<pre><code>http://app.back.ly/oauth/authorize?client_id=123&amp;redirect_uri=http://my.app/oauth/callback&amp;response_type=code
+</code></pre>
+
+<p>On this page users will be shown a prompt to authorize your app. If they accept they will be redirected back to the Redirect URL with the <strong>Authorization Code</strong> set in the query string parameter named <code>code</code>.</p>
+<p>For example:</p>
+<pre><code>http://my.app/callback?code=...
+</code></pre>
+
+<h2 id="obtaining-an-access-token">Obtaining an Access Token</h2>
+<p>When a user is redirected back to your Redirect URL after a successful authorization request your app should then issue a <code>POST</code> request to <code>http://app.back.ly/oauth/token</code> with the Authorization Code, along with these other parameters in the body of the request.</p>
+<ul>
+<li><code>client_id</code>: Your App ID.</li>
+<li><code>client_secret</code>: Your App Secret.</li>
+<li><code>code</code>: The Authorization Code returned by the successful authorization request.</li>
+<li><code>grant_type</code>: Set to <code>authorization_code</code>.</li>
+<li><code>redirect_uri</code>: Your Redirect URL.</li>
+</ul>
+<p>For example:</p>
+<pre><code>POST /oauth/token HTTP/1.1
+Host: app.back.ly.localhost
+Content-Type: application/x-www-form-urlencoded
+...
+
+code=...
+</code></pre>
+
+<p>This request will return a JSON response containing an <code>access_token</code> token attribute. This <strong>Access Token</strong> can then be used to make API requests.</p>
+<div id="post-requets"></div>
+
+<h3 id="post-requests">POST Requests</h3>
+<p>When making a <code>POST</code> request two formats are supported in the request body. Set your <code>Content-Type</code> header according to the format of the data you are sending.</p>
+<ul>
+<li><strong>URL-encoded</strong> (<code>application/x-www-form-urlencoded</code>)</li>
+<li><strong>JSON</strong> (<code>application/json</code>)</li>
+</ul>
+<div id="api"></div>
+
+<h1 id="authentication">Authentication</h1>
+<h2 id="using-the-access-token">Using the Access Token</h2>
+<p>To access the rest of the API in these docs you must use your Access Token as a Bearer Token in the <code>Authorization</code> header of every request you make.</p>
+<p>For example:</p>
+<pre><code>POST /links HTTP/1.1
+Authorization: Bearer &lt;access-token&gt;
+...
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../api/" class="btn btn-neutral float-right" title="The API">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="About the API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../api/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>
