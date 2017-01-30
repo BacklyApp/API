@@ -1,6 +1,6 @@
-site_name: Backly API
+site_name: Backly API Docs
 pages:
     - About the API: index.md
     - Authentication: auth.md
-    - The API: api.md
+    - API: api.md
 theme: readthedocs
