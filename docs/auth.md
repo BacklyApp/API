@@ -50,12 +50,14 @@ For example:
 ```
 POST /oauth/token HTTP/1.1
 Host: app.back.ly.localhost
-Content-Type: application/x-www-form-urlencoded
+Content-Type: application/json
 ...
-client_id=<client-id>
-client_secret=<client-secret>
-code=<auth-code>
-grant_type=authorization_code
+{
+  "client_id": "<client-id>",
+  "client_secret": "<client-secret>",
+  "code": "<auth-code>",
+  "grant_type": "authorization_code"
+}
 ```
 
 This request will return a JSON response containing an `access_token` token attribute. This **Access Token** can then be used to make API requests.
