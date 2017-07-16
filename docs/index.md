@@ -30,3 +30,9 @@ Content-Type: application/json
 # Obtaining Access
 
 The API is free to use. To apply for access contact us at [support@back.ly](mailto:support@back.ly), or come and chat with us in-app!
+
+# Using the API
+
+The Backly API returns data in JSON format and accepts either JSON or URL-encoded input for [`POST`ed data](/auth#post-requets).
+
+You must include an `Accept: application/json` header to ensure the JSON formatting of any error responses because the response will be formatted in HTML by default.

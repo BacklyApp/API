@@ -2,5 +2,7 @@ site_name: Backly API Docs
 pages:
     - About the API: index.md
     - Authentication: auth.md
-    - API: api.md
+    - Adverts (Messages):
+      - Recent: adverts/recent.md
+    - Links: links.md
 theme: readthedocs

@@ -1,70 +1,15 @@
-# Introduction
-
-The Backly API returns data in JSON format and accepts either JSON or URL-encoded input for [`POST`ed data](/auth#post-requets).
-
-You must include an `Accept: application/json` header to ensure the JSON formatting of any error responses because the response will be formatted in HTML by default.
-
-# Links
-
-## Create `POST` `/links`
-
-Create a new link.
-
-### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| `advert` | String | The identifier code of the advert you wish to display with this link. |
-| `url` | URL | The URL you wish to share. |
-
-### Example Request
-
-```
-POST /links HTTP/1.1
-Host: api.back.ly
-Authorization: Bearer ...
-Accept: application/json
-Content-Type: application/json
-...
-
-{
-  "advert": "abc123",
-  "url": "http://example.com?page=123#section"
-}
-```
-
-### Example Response
-
-```json
-HTTP/1.1 200 OK
-...
-
-{
-  "created_at": "2015-01-01 12:00:00",
-  "url": "http://example.com",
-  "title": "Example Domain",
-  "description": "This is an example website.",
-  "image": "http://example.com/image.jpg",
-  "code": "abc123",
-  "short_url": "http://back.ly/abc123",
-  "url_host": "example.com"
-}
-```
-
-# Adverts
-
-## Recent `GET` `/adverts/recent`
+`GET /adverts/recent`
 
 Retrieve a list of the most recently used adverts.
 
-### Parameters
+# Parameters
 
 | Name | Type | Description |
 |---|---|---|
-| `limit` | Integer | The number of adverts to limit the result to. The default value is 20. |
-| `offset` | Integer | The number of adverts to offset the result by. The default value is 0. |
+| limit | Integer | The number of adverts to limit the result to. The default value is 20. |
+| offset | Integer | The number of adverts to offset the result by. The default value is 0. |
 
-### Example Request
+# Example Request
 
 ```
 GET /adverts/recent HTTP/1.1
@@ -74,7 +19,7 @@ Accept: text/json
 ...
 ```
 
-### Example Response
+# Example Response
 
 ```json
 [
