@@ -4,5 +4,6 @@ pages:
     - Authentication: auth.md
     - Adverts (Messages):
       - Recent: adverts/recent.md
+      - Create: adverts/create.md
     - Links: links.md
 theme: readthedocs
