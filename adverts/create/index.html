@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Create - Backly API (BETA) Docs</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Create";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Backly API (BETA) Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">About the API</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../auth/">Authentication</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Adverts (Messages)</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../recent/">Recent</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Create</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#parameters">Parameters</a></li>
+                
+                    <li><a class="toctree-l4" href="#colors">Colors</a></li>
+                
+                    <li><a class="toctree-l4" href="#content">Content</a></li>
+                
+                    <li><a class="toctree-l4" href="#call-to-action">Call-to-action</a></li>
+                
+                    <li><a class="toctree-l4" href="#entry">Entry</a></li>
+                
+                    <li><a class="toctree-l4" href="#entry-conditions">Entry conditions</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../links/">Links</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Backly API (BETA) Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Adverts (Messages) &raquo;</li>
+        
+      
+    
+    <li>Create</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><code>POST /adverts</code><br>
+<code>POST /advert/&lt;advert-id&gt;</code></p>
+<p>Create a new advert or update an existing one.</p>
+<h1 id="parameters">Parameters</h1>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Plans</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>style</td>
+<td>String</td>
+<td>Yes</td>
+<td>Free</td>
+<td>Advert style.<br><br>Choose from Social <code>social_v2</code> or Banner <code>full_width</code>.</td>
+<td><code>'social_v2'</code></td>
+</tr>
+<tr>
+<td>"</td>
+<td>"</td>
+<td>"</td>
+<td>Premium</td>
+<td>Choose from the styles above plus Hidden <code>hidden</code>.</td>
+<td><code>'full_width'</code></td>
+</tr>
+</tbody>
+</table>
+<p>Used by all styles</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Plans</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>brand</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>css</td>
+<td>String</td>
+<td></td>
+<td><code>''</code></td>
+<td>Premium</td>
+<td>Custom page CSS.</td>
+<td><code>'.ad { opacity: 0.5; }'</code></td>
+</tr>
+<tr>
+<td>pixles</td>
+<td>String</td>
+<td></td>
+<td><code>''</code></td>
+<td>Premium</td>
+<td>Custom HTML inserted into HEAD.</td>
+<td><code>'&lt;script&gt;...'</code></td>
+</tr>
+<tr>
+<td>scripts</td>
+<td>String</td>
+<td></td>
+<td><code>''</code></td>
+<td>Premium</td>
+<td>Custom JavaScript run on page load.</td>
+<td><code>'alert("Hello")'</code></td>
+</tr>
+</tbody>
+</table>
+<p>Used by Social, Social simple, Full Width and Popup message formats.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Plans</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>colors</td>
+<td>Array</td>
+<td>Yes</td>
+<td></td>
+<td>See below.<br><br>Colors used in your advert.</td>
+<td></td>
+</tr>
+<tr>
+<td>content</td>
+<td>Array</td>
+<td>Yes</td>
+<td></td>
+<td>See below.</td>
+<td></td>
+</tr>
+<tr>
+<td>cta</td>
+<td>Array</td>
+<td></td>
+<td></td>
+<td>See below.<br><br>An optional, but recommended call-to-action for your advert.</td>
+<td></td>
+</tr>
+<tr>
+<td>entry</td>
+<td>Array</td>
+<td>Yes</td>
+<td></td>
+<td>See below.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Used by Social, Social simple and Full Width message formats.</p>
+<p>| position | String | Yes | | Advert page position.<br><br><code>top</code> or <code>bottom</code> when style is Banner<br><br><code>top_left</code>, <code>top_right</code>, <code>bottom_left</code> or <code>bottom_right</code> when style is Social or Social simple. | <code>'bottom_left'</code> |</p>
+<h2 id="colors">Colors</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Plans</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>background</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+<td>Advert background color as a 6 digit hex code.</td>
+<td><code>'000000'</code></td>
+</tr>
+<tr>
+<td>text</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+<td>Advert text color.</td>
+<td><code>'333333'</code></td>
+</tr>
+<tr>
+<td>button.background</td>
+<td>String</td>
+<td>When <code>cta</code> is present or <code>style</code> is <code>social_v2</code>.</td>
+<td></td>
+<td>Advert button background color / link color.</td>
+<td><code>'2196f3'</code></td>
+</tr>
+<tr>
+<td>button.text</td>
+<td>String</td>
+<td>When <code>cta</code> is present.</td>
+<td></td>
+<td>Advert button text color.</td>
+<td><code>'e2f1fe'</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="content">Content</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Plans</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>body</td>
+<td>String</td>
+<td>When style is Social.</td>
+<td></td>
+<td>Text visible when the Social style advert is expanded.<br><br>Can include HTML.</td>
+<td><code>'Lorem ipsum...'</code></td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>When style is Social or Banner.</td>
+<td></td>
+<td>Also known as <em>teaser</em>.<br><br>Used as the introduction for the Social advert style or as the text on Banner adverts.<br><br>Plain text only.</td>
+<td><code>'Lorem ipsum...'</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="call-to-action">Call-to-action</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Plans</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>Yes</td>
+<td>Free</td>
+<td>The only avaialable option, <code>button_link</code>.</td>
+<td><code>'button_link'</code></td>
+</tr>
+<tr>
+<td>"</td>
+<td>"</td>
+<td>"</td>
+<td>Premium</td>
+<td>One of <code>button_link</code>, <code>facebook_like</code> or <code>email</code>, or leave null for no CTA.</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
+<p>Button link</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Plans</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+<td>Either <code>blank</code> to open the link in a new tab or <code>self</code> to open in the current tab.</td>
+<td></td>
+</tr>
+<tr>
+<td>text</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+<td>Button label text.</td>
+<td><code>'Click Here'</code></td>
+</tr>
+<tr>
+<td>url</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+<td>URL to navigate visitor to. Must be a valid URL.</td>
+<td><code>'http://example.com/?r=123'</code></td>
+</tr>
+<tr>
+<td>wiggle</td>
+<td>Boolean</td>
+<td>Yes</td>
+<td></td>
+<td>Whether to wiggle the button or not. Can only be used with Banner adverts.</td>
+<td><code>true</code></td>
+</tr>
+</tbody>
+</table>
+<p>Facebook Like</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Plans</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>show_count</td>
+<td>Boolean</td>
+<td>Yes</td>
+<td></td>
+<td>Whether to show the number of likes.</td>
+<td></td>
+</tr>
+<tr>
+<td>show_share_button</td>
+<td>Boolean</td>
+<td>Yes</td>
+<td></td>
+<td>Whether to add a share button.</td>
+<td></td>
+</tr>
+<tr>
+<td>url</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+<td>URL of the page / Facebook page for visitors to like. Must be a valid URL.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Email</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Plans</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+<td>Button label text.</td>
+<td><code>'Click to Subscribe'</code></td>
+</tr>
+<tr>
+<td>submit_text</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+<td>Submit button label text.</td>
+<td><code>'Submit'</code></td>
+</tr>
+<tr>
+<td>placeholder</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+<td>E-mail input placeholder text.</td>
+<td><code>'Enter your e-mail'</code></td>
+</tr>
+<tr>
+<td>webhook_url</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+<td>URL of the webhook where to send submissions.<br><br>This could be a Zapir or IFTTT webhook.</td>
+<td><code>'https://hooks.zapier.com/hooks/catch/abc123/xyz789/'</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="entry">Entry</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Plans</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>animation</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+<td>One of <code>none</code>, <code>slide</code>, <code>fade</code> or <code>flash</code>.</td>
+<td><code>'slide'</code></td>
+</tr>
+<tr>
+<td>conditions</td>
+<td>Array</td>
+<td></td>
+<td></td>
+<td>See below.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="entry-conditions">Entry conditions</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Plans</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>time_on_page</td>
+<td>Integer</td>
+<td></td>
+<td>Premium</td>
+<td>An optional time to delay the entrance of the advert by in seconds. Minimum of 1s, maximum of 60s.</td>
+<td><code>10</code></td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../links/" class="btn btn-neutral float-right" title="Links"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../recent/" class="btn btn-neutral" title="Recent"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../recent/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../links/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

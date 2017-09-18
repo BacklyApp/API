@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Recent - Backly API (BETA) Docs</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Recent";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Backly API (BETA) Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">About the API</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../auth/">Authentication</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Adverts (Messages)</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Recent</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#parameters">Parameters</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#example-request">Example Request</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#example-response">Example Response</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../create/">Create</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../links/">Links</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Backly API (BETA) Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Adverts (Messages) &raquo;</li>
+        
+      
+    
+    <li>Recent</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><code>GET /adverts/recent</code></p>
+<p>Retrieve a list of the most recently used adverts.</p>
+<h1 id="parameters">Parameters</h1>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>limit</td>
+<td>Integer</td>
+<td>The number of adverts to limit the result to. The default value is 20.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Integer</td>
+<td>The number of adverts to offset the result by. The default value is 0.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="example-request">Example Request</h1>
+<pre><code>GET /adverts/recent HTTP/1.1
+Host: api.back.ly
+Authorization: Bearer ...
+Accept: text/json
+...
+</code></pre>
+
+<h1 id="example-response">Example Response</h1>
+<pre><code class="json">[
+  {
+    &quot;created_at&quot;: &quot;2015-01-01 12:00:00&quot;,
+    &quot;archived_at&quot;: null,
+    &quot;data&quot;: {
+      &quot;colors&quot;: {
+        &quot;background&quot;: &quot;ffffff&quot;,
+        &quot;button&quot;: {
+          &quot;background&quot;: &quot;2196f3&quot;,
+          &quot;text&quot;: &quot;e2f1fe&quot;
+        },
+        &quot;text&quot;: &quot;333333&quot;
+      },
+      &quot;content&quot;: {
+        &quot;body&quot;: &quot;&lt;p&gt;This area is the &lt;b&gt;body&lt;/b&gt; of your message. It gives you more space to expand on what you have to say. 📣&lt;/p&gt;&lt;p&gt;You can use this place to tell your story 💕, describe yourself 😄 and what you do 👔 and &lt;i&gt;persuade people to click your &lt;b&gt;call-to-action button&lt;/b&gt; and&lt;/i&gt; &lt;a&gt;your links&lt;/a&gt;! 🖱✨💰&lt;/p&gt;&quot;,
+        &quot;button&quot;: {
+          &quot;text&quot;: &quot;Click Here&quot;,
+          &quot;url&quot;: &quot;http://back.ly&quot;
+        },
+        &quot;description&quot;: &quot;I'm a ready-made message! Click to expand me.&quot;
+      },
+      &quot;entry&quot;: {
+        &quot;animation&quot;: &quot;fade&quot;
+      },
+      &quot;position&quot;: &quot;bottom_left&quot;,
+      &quot;scripts&quot;: &quot;&quot;,
+      &quot;size&quot;: &quot;md&quot;,
+      &quot;style&quot;: &quot;social_v2&quot;,
+      &quot;target&quot;: &quot;blank&quot;,
+      &quot;wiggle&quot;: false
+    },
+    &quot;clicks&quot;: 0,
+    &quot;code&quot;: &quot;EGzvJyP5gG5MjABa&quot;,
+    &quot;ctr&quot;: 0,
+    &quot;impressions&quot;: 1,
+    &quot;brand&quot;: {
+      &quot;name&quot;: &quot;Backly Dev&quot;,
+      &quot;image&quot;: &quot;data:image/jpeg;base64,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&quot;,
+      &quot;code&quot;: &quot;L7pQkYz46R4jNwqJ&quot;
+    }
+  }
+]
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../create/" class="btn btn-neutral float-right" title="Create"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../auth/" class="btn btn-neutral" title="Authentication"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../auth/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../create/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
