@@ -1,4 +1,4 @@
-site_name: Backly API Docs
+site_name: Backly API (BETA) Docs
 pages:
     - About the API: index.md
     - Authentication: auth.md
